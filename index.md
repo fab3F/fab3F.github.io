@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+# Welcome to my GitHub
 
-You can use the [editor on GitHub](https://github.com/fab3F/fab3F.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+## Hi there I am fab3F.
+Go to my GitHub Page https://fab3F.github.io or to the EasyFlick Homepage https://easyflick.us.to an join the [Discord Server](https://discord.gg/dkpKAdvarP)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+# EasyFlick
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Hier bei EasyFlick und auf der [EasyFlick Homepage](https://easyflick.us.to) findest du alle möglichen Downloads zu Minecraft Ressourcenpaketen, Wallpapern und anderen Dingen. Viel Spaß!
+
+
+## Was gibt's denn hier Schönes?
+
+EasyFlick ist ein Netzwerk mit vielen **verschiedenen Möglichkeiten** in Richtung Gaming, Coding oder auch mal Dokumentationen mit Tipps und Tricks.
+
+
+### Minecraft
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+- Selbsterstelle Ressourcenpakete
+- Eigene Plugins
+- Texturepacks
+- und vieles mehr...
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Der EasyFlick [Discord](https://discord.gg/dkpKAdvarP)
 
-### Jekyll Themes
+```markdown
+Wir haben natürlich auch einen Discord, deswegen kommt gerne auf den Discord. 
+Dort gibt es viele nette Menschen und eure Fragen werden hier am schnellsten beantwortet! Außerdem
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/fab3F/fab3F.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- einen eigenen Discord Bot
+- Zocken mit Freunden
+- Minigames wie TicTacToe
+- Musikbots
+- und natürlich einen schnellen Support!
+```
 
-### Support or Contact
+### Die EasyFlick [Homepage](https://easyflick.us.to)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```markdown
+Auf der Homepage gibt es die ganzen Downloads zu den besagten Projekten. 
+```
+
+## Support oder Kontakt
+
+Du hast ein Problem mit einem unserer Dienste oder möchtest eine Frage loswerden? Dann komm doch gerne auf den [EasyFlick Discord](https://discord.gg/dkpKAdvarP)! Dort kannst du im extra dafür angelegten _Support-Channel_ nachfragen. Oder du schreibst eine E-Mail an **support@help.info.gf**
