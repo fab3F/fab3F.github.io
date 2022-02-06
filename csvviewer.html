@@ -1,9 +1,44 @@
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>HTML5 File API</title>
+  <title>fab3F Homepage - CSV Viewer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="fab3F Homepage - CSV Viewer">
+  <meta name="keywords" content="fab3F">
+  <meta name="author" content="fab3F">
+	
+  <link rel="icon" type="image/png" href="/images/fab3F.png">
+  
+  <base href="https://fab3F.github.io" target="_self">
+  
+  <link rel="stylesheet" href="/css/w3.css">
+  
+  <style>
+    .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  	}
+  </style>
 </head>
+  
 <body >
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+      <a href="#home" class="w3-bar-item w3-button"><b>fab3F</b> Homepage</a>
+      <!-- Float links to the right. Hide them on small screens -->
+      <div class="w3-right w3-hide-small">
+        <a href="#projects" class="w3-bar-item w3-button">Projekte</a>
+        <a href="#about" class="w3-bar-item w3-button">Über mich</a>
+        <a href="#contact" class="w3-bar-item w3-button">Kontakt</a>
+      </div>
+    </div>
+  </div>
+  
+  
+
   <div>
     <form class="form-horizontal well">
       <legend>
@@ -26,6 +61,6 @@
   <!-- javascript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script type="text/javascript" src="js/read-csv.js"></script>
+  <script type="text/javascript" src="js/csvviewer.js"></script>
 </body>
 </html>
