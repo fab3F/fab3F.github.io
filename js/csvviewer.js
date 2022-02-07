@@ -4,7 +4,7 @@ function handleFiles(files) {
 		// FileReader are supported.
 		getAsText(files[0]);
 	} else {
-		alert('FileReader are not supported in this browser.');
+		alert('Das Einlesen von Dateien wird von deinem Browser nicht unterstützt!');
 	}
 }
 
@@ -54,7 +54,7 @@ function processDataAsObj(csv){
 
 function errorHandler(evt) {
 	if(evt.target.error.name == "NotReadableError") {
-		alert("Canno't read file !");
+		alert("Datei kann nicht eingelesen werden!");
 	}
 }
 
