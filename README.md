@@ -11,9 +11,6 @@
 Go to my GitHub Page [fab3F.github.io](https://fab3F.github.io) or to the EasyFlick Homepage [easyflick.us.to](https://easyflick.us.to) and join the [Discord Server](https://fab3f.github.io/link/discord)
 
 
-----------------------------------------------------------------
-
-
 # EasyFlick
 
 Hier bei EasyFlick und auf der [EasyFlick Homepage](https://easyflick.us.to) findest du alle möglichen Downloads zu Minecraft Ressourcenpaketen, Wallpapern und anderen Dingen. Viel Spaß!
