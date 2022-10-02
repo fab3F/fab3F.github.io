@@ -11,6 +11,11 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://fab3f.github.io/index</loc>
+  <lastmod>2022-10-02T11:58:25+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://fab3f.github.io/online-csv-viewer/</loc>
   <lastmod>2022-10-01T22:52:24+00:00</lastmod>
   <priority>0.80</priority>
@@ -31,39 +36,44 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://fab3f.github.io/404</loc>
+  <lastmod>2022-10-02T11:58:25+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+<url>
   <loc>https://fab3f.github.io/link/discord</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://fab3f.github.io/link/github</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://fab3f.github.io/link/easyflick</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://fab3f.github.io/link/instagram</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://fab3f.github.io/link/twitch</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://fab3f.github.io/link/twitter</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 <url>
   <loc>https://fab3f.github.io/link/youtube</loc>
   <lastmod>2022-10-02T11:58:25+00:00</lastmod>
-  <priority>0.80</priority>
+  <priority>0.60</priority>
 </url>
 
 </urlset>
