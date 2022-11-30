@@ -65,6 +65,35 @@
         <p>Diese Seite ist bald verfügbar</p>
     </div>
 
+  <p>Der fab3F Twitch Bot ist einfach zu installieren und kann leicht an die eigenen Bed&uuml;rfnisse angepasst werden.</p>
+  <p>Installation</p>
+  <ol>
+    <li>Erstelle einen neunen Twitch-Account f&uuml;r den Twitch Bot.</li>
+    <li>Aktiviere die Zwei-Faktor-Authentifizierung f&uuml;r den neuen Twitch-Account.</li>
+    <li>Generiere ein Twitch Chat OAuth Passwort auf <a data-fr-linked="true" href="https://twitchapps.com/tmi">https://twitchapps.com/tmi</a>.</li>
+    <li>Erstelle eine Applikation auf <a data-fr-linked="true" href="https://dev.twitch.tv/console/apps/create,">https://dev.twitch.tv/console/apps/create</a>. Nutze &quot;https://localhost &quot; als OAuth Redirect URL.</li>
+    <li>Kopiere die Client ID deiner neuen Applikation. Diese findest du unter dem Punkt &quot;Manage&quot;.</li>
+    <li>Lade die letzte Version des Twitch Bot von <a href="https://github.com/fab3F/fab3F_Twitch_Bot">https://github.com/fab3F/fab3F_Twitch_Bot</a> herunter.</li>
+    <li>Du kannst den Bot beispielsweise auf einem Raspberry Pi installieren. Jegliches anderes Betriebssystem ist aber auch m&ouml;glich.</li>
+    <li>Entpacke die Dateien in den gew&uuml;nschten Ordner.</li>
+    <li>Nenne die &quot;.env.sample&quot; - Datei in &quot;.env&quot; um</li>
+    <li>F&uuml;ge nun das TMI-Token und die Client-ID aus Schritt 3 und 5 hinzu und richte die restlichen Punkte nach deinen Belieben ein.</li>
+    <li>Installiere nun die n&ouml;tigen Pakete. &Ouml;ffne dazu eine Kommandozeile und navigiere in den Projektordner. Dort f&uuml;hrst du folgenden Befehl aus: &apos;sudo -H python3 -m pip install -r requirements.txt&apos;</li>
+    <li>Starte den Bot mit &apos;pyhton3 bot.py&apos;</li>
+    <li>Jetzt kannst du den Bot im Twitch-Chat testen.</li>
+  </ol>
+  <p>Autostart</p>
+  <p>F&uuml;hre die folgenden Befehle im Projektordner aus, um den Bot direkt beim Start zu starten:</p>
+  <p>&apos;sudo cp fab3F_twitch_bot.service /lib/systemd/system&apos;</p>
+  <p>&apos;sudo systemctl deamon-reload&apos;</p>
+  <p>&apos;sudo systemctl enable fab3F_twitch_bot.service&apos;</p>
+  <p>&apos;sudo systemctl start fab3F_twitch_bot.service&apos;</p>
+  <p>Jetzt startet der Twitch Bot von ganz alleine!</p>
+  <p><br></p>
+  <p>Eigene Anpassung</p>
+  <p>Du kannst den Bot an deine eigenen Bed&uuml;rfnisse anpassen, indem du die Datei &apos;bot.py&apos; modifizierst. Du solltest bereits Grundkenntnisse in der Programmierung haben, um eigene Befehle zu erstellen oder anzupassen.</p>
+  <p><br></p>
+
 </div>
 
 </body>
