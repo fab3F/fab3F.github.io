@@ -6,13 +6,20 @@
 	
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="fab3F Homepage - Was mache ich? Was gibts hier alles? Viele Projekte, ausgeklügelt programmiert (natürlich) und Links zu weiteren vielen tollen Projekten!">
-<meta name="keywords" content="fab3F, fab3F Homepage, programmieren, Projekte, csv, csv viewer, online, csv viewer online">
+<meta name="description" content="fab3F Homepage - Hier gibt es viele Projekte, ausgeklügelt programmiert (natürlich) und Links zu weiteren vielen tollen Projekten!">
+<meta name="keywords" content="fab3F, fab3F Homepage, programmieren, Projekte, homepage, home, html, css, js, javascript">
 <meta name="author" content="fab3F">
 <base href="https://fab3F.github.io" target="_self">
-  
-<link rel="stylesheet" href="/css/w3.css">
-<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="stylesheet" href="/css/reset.css" type="text/css">
+<link rel="stylesheet" href="/css/main.css" type="text/css">
+<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="/css/carousel.css"type="text/css">
+<script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/css/styles.css" type="text/css">
+<link rel="stylesheet" href="/css/footer.css" type="text/css">
+<!--Footer Social Media Icons Stylesheet-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
 
 	
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -25,134 +32,247 @@
 	
 <meta property="og:title" content="fab3F Homepage" />
 <meta property="og:url" content="https://fab3F.github.io" />
-<meta property="og:description" content="fab3F Homepage - Was mache ich? Was gibts hier alles? Viele Projekte, ausgeklügelt programmiert (natürlich) und Links zu weiteren vielen tollen Projekten!" />
+<meta property="og:description" content="fab3F Homepage - Hier gibt es viele Projekte, ausgeklügelt programmiert (natürlich) und Links zu weiteren vielen tollen Projekten!" />
 <meta property="og:image" content="/images/fab3F_white.png" />
 <meta name="twitter:site" content="@fab3F_official" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="@fab3F_official" />
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL9HZNY8V4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YL9HZNY8V4');
+</script>
+
 </head>
+
 <body>
-
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>fab3F</b> Homepage</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#projects" class="w3-bar-item w3-button">Projekte</a>
-      <a href="#about" class="w3-bar-item w3-button">Über mich</a>
-      <a href="#contact" class="w3-bar-item w3-button">Kontakt</a>
+  <!-- Navigation -->
+  <nav id="home" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#home"><b>fab3F</b> Homepage</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">Über mich</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projekte</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Kontakt</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
+  </nav>
 
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img src="/images/fab3F_logo.png" alt="logo" class="center">
-</header>
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1200px">
-
-  <!-- Projekte Section -->
-  <div class="w3-container w3-padding-32" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size:35px;">Projekte</h3>
-    <p>Hier findest du alle Projekte verlinkt. Auf der Website des Projekts erhältst du zusätzliche Informationen über das jeweilige Projekt. Der Code ist meistens direkt auf der Seite verlinkt. Alternativ findest du diesen aber immer auch auf meinem <a href="/link/github" title="fab3F Github" target="_blank">GitHub</a>. Falls du bei deiner Suche nicht fündig geworden bist, kannst du auch auf <a href="/link/easyflick" title="EasyFlick Homepage" target="_blank">EasyFlick</a> vorbeischauen. Dort findest du viele weitere Downloads.</p>
-  </div>
-
-
-  <!-- Web Apps Section -->
-  <div class="w3-container w3-padding-32">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Web Apps</h3>
-  </div>
-
-  <!-- In eine row padding div können 4 Projekte danach muss eine neue Zeile angefangen werden -->
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-          <a title="Online CSV Viewer" href="/online-csv-viewer" target="_self"><div class="w3-display-topleft w3-black w3-padding">Online CSV Viewer</div>
-              <img src="/images/csv_viewer_preview.png" alt="Online CSV Viewer Preview" style="width:100%; border: 3px solid #000">
+  <header>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('/images/startpage/html.jpg')">
+          <a href="#home">
+            <div class="carousel-caption">
+              <h5>fab3F Homepage</h5>
+              <p>Herzlich Willkommen!</p>
+            </div>
           </a>
-      </div>
-    </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-            <a title="Online SQLite Viewer" href="/online-sqlite-viewer" target="_self"><div class="w3-display-topleft w3-black w3-padding">Online SQLite Viewer</div>
-                <img src="/images/picture_coming_soon.png" alt="Picture coming soon" style="width:100%; border: 3px solid #000">
-            </a>
         </div>
+        <div class="carousel-item" style="background-image: url('/images/startpage/csv.jpg')">
+          <a href="/online-csv-viewer" target="_self">
+            <div class="carousel-caption">
+              <h5">Online CSV Viewer</h5>
+              <p>Zeige CSV-Dateien ganz einfach online an.</p>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item" style="background-image: url('/images/startpage/coding.jpg')">
+          <a href="/projects/discordbot/" target="_self">
+            <div class="carousel-caption">
+              <h5>Discord Bot</h5>
+              <p>Eigener fab3F Discord Bot!</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Vorheriges</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Nächstes</span>
+      </button>
     </div>
-  </div>
+  </header>
 
-
-  <!-- Bots Section -->
-  <div class="w3-container w3-padding-32">
-      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Bots</h3>
-  </div>
-
-
-  <div class="w3-row-padding">
-      <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-              <a title="fab3F Discord Bot" href="/projects/discordbot" target="_self"><div class="w3-display-topleft w3-black w3-padding">fab3F Discord Bot</div>
-                  <img src="/images/picture_coming_soon.png" alt="Picture coming soon" style="width:100%; border: 3px solid #000">
-              </a>
-          </div>
+  <!-- Page Content -->
+  <div class="background">
+    <section id="about" class="py-4">
+      <div class="container content">
+        <h1 class="fw-light">Über mich</h1>
+        <p class="lead">Hi! Ich bin <b>fab3F</b>. In meiner Freizeit programmiere ich gerne und entwickle Websites, 
+          Minecraft Plugins oder Mods, Discord Bots und noch vieles mehr! Ich programmiere hauptsächlich mit Java, 
+          aber um JavaScript oder Python kommt man nicht immer herum. Auf meiner anderen Website <a href="https://easyflick.us.to" target="_blank">easyflick.us.to</a>
+          findest du Downloads zu meinen Minecraft Ressource-Paketen und Wallpapern. Außerdem habe ich auch einen <a href="/link/discord" target="_blank">Discord</a>. 
+          Ich wünsche dir Viel Spaß auf meiner Website!</p>
       </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-              <a title="fab3F Twitch Bot" href="/projects/twitchbot" target="_self"><div class="w3-display-topleft w3-black w3-padding">fab3F Twitch Bot</div>
-                  <img src="/images/picture_coming_soon.png" alt="Picture coming soon" style="width:100%; border: 3px solid #000">
-              </a>
-          </div>
-      </div>
-  </div>
-
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32" id="about">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size:35px;">Über mich</h3>
-    <p>Hi! Ich bin fab3F. In meiner Freizeit programmiere ich gerne und entwickle Websites, Minecraft Plugins oder Mods, Discord Bots und noch vieles mehr! Ich programmiere hauptsächlich mit Java, aber um JavaScript oder Python kommt man nicht immer herum. Auf meiner anderen Website <a href="https://fab3F.github.io/link/easyflick">https://easyflick.us.to</a> findest du Downloads zu meinen Minecraft Ressource-Paketen und Wallpapern. Außerdem habe ich auch einen <a href="https://fab3F.github.io/link/discord">Discord</a>. Ich wünschen Viel Spaß auf meiner Website!
-    </p>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-size:35px;">Kontakt - So kannst du mich erreichen!</h3>
-		<p>Über meinen Discord!</p>
-		<button onclick="window.open('https://fab3F.github.io/link/discord','_blank')" class="glow-on-hover" type="button">DISCORD BEITRETEN</button>
-	  	<br>
-		<br>
-		<p>Über eine E-Mail an <a href="mailto:kontakt@help.info.gf">kontakt@help.info.gf</a>.</p>
-		<br>
-		<p>Auf Social-Media!</p>
-		<button onclick="window.open('https://fab3F.github.io/link/twitter','_blank')" class="glow-on-hover" type="button">TWITTER</button>
-		<br>
-		<br>
-		<button onclick="window.open('https://fab3F.github.io/link/youtube','_blank')" class="glow-on-hover" type="button">YOUTUBE</button>
-		<br>
-		<br>
-		<button onclick="window.open('https://fab3F.github.io/link/instagram','_blank')" class="glow-on-hover" type="button">INSTAGRAM</button>
-		<br>
-		<br>
-		<button onclick="window.open('https://fab3F.github.io/link/twitch','_blank')" class="glow-on-hover" type="button">TWITCH</button>
-		<br>
-		<br>
-		<p>Ganz wichtig ist mein Github. Hier sind alle möglichen Dinge, die ich gemacht habe.</p>
-		<button onclick="window.open('https://fab3F.github.io/link/github','_blank')" class="glow-on-hover" type="button">GITHUB</button>
-		<br>
-		<br>
-		<p>Ansonsten empfehle ich noch <a href="https://fab3F.github.io/link/easyflick">easyflick.us.to</a>, die offizielle EasyFlick Homepage!</p>
-        <br/>
-        <p>Impressum und Datenschutz findest du <a href="https://easyflick.us.to/impressum-datenschutz">hier</a>.</p>
-        <br>
-		<h3>Vielen Dank, dass du hier bist!</h3>
-		<br>
-		<h2>~ fab3F</h2>
-  </div>
+    </section>
   
+    <section id="projects" class="py-4">
+      <div class="container content">
+        <h1 class="fw-light">Projekte</h1>
+        <p class="lead">Hier findest du alle Projekte verlinkt. Auf der Website des Projekts erhältst du zusätzliche Informationen über das jeweilige Projekt. 
+          Der Code ist meistens direkt auf der Seite verlinkt. Alternativ findest du diesen aber immer auch auf meinem <a href="/link/github" target="_blank">GitHub</a>. 
+          Falls du bei deiner Suche nicht fündig geworden bist, kannst du auch auf <a href="/link/easyflick" target="_blank">EasyFlick</a> vorbeischauen. 
+          Dort findest du viele weitere Downloads.
+        </p>
+        <h3 class="projects-header fw-light">Web Apps</h3>
+        <div class="projects-list">
+          <div class="project">
+            <a class="projects-picture-link" href="/online-csv-viewer" target="_self">
+              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
+            </a>
+            <h4 class="projects-info"><a href="/online-csv-viewer" target="_self">Online CSV Viewer</a></h4>
+            <p class="projects-info lead">
+              Mit diesem Tool kannst du CSV-Dateien ganz schnell und einfach online anzeigen lassen! 
+              Du musst dir also kein weiteres Programm oder ähnliches herunterladen. 
+              Der Viewer zeigt die sonst so unübersichtliche Datei mit einzigartiger Benutzererfahrung an!
+            </p>
+          </div>
+          <div class="project">
+            <a class="projects-picture-link" href="/online-sqlite-viewer" target="_self">
+              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
+            </a>
+            <h4 class="projects-info"><a href="/online-sqlite-viewer" target="_self">Online SQLite Viewer</a></h4>
+            <p class="projects-info lead">
+              Um SQLite-Dateien ohne eine weitere Anwendung zu betrachten, kannst du einfach diesesn Online-SQLite-Viewer verwenden. 
+              Dieser ermöglicht es, schnell und einfach eine übersichtliche Tabelle aus der SQLite-Datei zu erstellen und anzuzeigen!
+            </p>
+          </div>
+        </div>
 
-</div>
+        <h3 class="projects-header fw-light">Bots</h3>
+        <div class="projects-list">
+          <div class="project">
+            <a class="projects-picture-link" href="/projects/discordbot" target="_self">
+              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
+            </a>
+            <h4 class="projects-info"><a href="/projects/discordbot" target="_self">fab3F Discord Bot</a></h4>
+            <p class="projects-info lead">
+              Der fab3F Discord Bot ist vollkommen individuell anpassbar und bietet viele besondere Features. 
+              Neben vielen Minigames wie TicTacToe oder Hangman kann der Bot auch jegliche Form von Musik abspielen. 
+              Außerdem gibt es ein eigenes Levelsystem mit automatischer Rollenvergabe, wenn ein neues Level erreicht wurde. 
+              Mit vielen weiteren Funktionen ist der Bot also bestens für deinen Discord-Server geeignet!
+            </p>
+          </div>
+          <div class="project">
+            <a class="projects-picture-link" href="/online-sqlite-viewer" target="_self">
+              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
+            </a>
+            <h4 class="projects-info"><a href="/online-sqlite-viewer" target="_self">fab3F Twitch Bot</a></h4>
+            <p class="projects-info lead">
+              Der fab3F Twitch Bot ist ein eigener selbst ersteller Twitch Bot zum selbst-hosten. 
+              Der Bot beinhalted grundlegende Funktionen und kann selbstständig erweitert und an die eigenen Bedürfnisse angepasst werden. 
+              Den Bot kannst du dann für deinen eigenen Twitch-Kanal zum Beispiel auf einem Raspberry Pi hosten. 
+              Eine genaue Anleitung ist hier mit dabei!
+            </p>
+          </div>
+        </div>
 
+        <h3 class="projects-header fw-light">Sonstiges</h3>
+        <div class="projects-list">
+          <div class="project">
+            <a class="projects-picture-link" href="/eieruhr" target="_self">
+              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
+            </a>
+            <h4 class="projects-info"><a href="/projects/discordbot" target="_self">Eieruhr</a></h4>
+            <p class="projects-info lead">
+              Dies ist eine simple Eieruhr. Damit kannst du einen Timer starten und ein Alarm ertönt, sobald das Ei fertig gekocht ist! 
+              Klein aber fein. 
+              Die Funktionen der Eieruhr wurden ausschließlich mit JavaScript programmiert. 
+              Du kannst die Website auch als App benutzen. Dazu kannst du auf deinem Handy die Website zum Beispiel in Google Chrome öffnen. 
+              Anschließend tippst du im Menü auf "Zum Startbildschrim hinzufügen" und schon kannst du die App auch offline nutzen!
+            </p>
+          </div>
+        </div>
+
+        <p class="lead">
+        Viele weitere und vorallem kleinere Projekte findest du auf <a href="/link/github" target="_blank">GitHub</a>. 
+        </p>
+
+
+      </div>
+      
+    </section>
+
+    <section id="contact" class="py-4">
+      <div class="container content">
+        <h1 class="fw-light">Kontakt und Social Media</h1>
+        <p class="lead mt-4 mb-1">
+          Wenn du mich unterstützen möchtest, kannst du mir gerne auf Social Media folgen. 
+          So bleibst du immer auf dem neusten Stand und verpasst auch keine wichtigen Dinge mehr! 
+        </p>
+        <button onclick="window.open('https://fab3F.github.io/link/twitter','_blank')" class="glow-on-hover" type="button">TWITTER</button>
+        <button onclick="window.open('https://fab3F.github.io/link/youtube','_blank')" class="glow-on-hover" type="button">YOUTUBE</button>
+        <button onclick="window.open('https://fab3F.github.io/link/instagram','_blank')" class="glow-on-hover" type="button">INSTAGRAM</button>
+        <button onclick="window.open('https://fab3F.github.io/link/github','_blank')" class="glow-on-hover" type="button">GITHUB</button>
+        <button onclick="window.open('https://fab3F.github.io/link/twitch','_blank')" class="glow-on-hover" type="button">TWITCH</button>
+        <p class="lead mt-4 mb-1">
+          Wenn du Fragen hast oder gerade nach einem Discord Server suchst, kannst du auch gerne meinem Discord beitreten: 
+        </p>
+        <button onclick="window.open('https://fab3F.github.io/link/discord','_blank')" class="glow-on-hover" type="button">DISCORD</button>
+        <p class="lead mt-4 mb-1">
+          Ansonsten kannst du auch eine E-Mail schreiben an: 
+        </p>
+        <p class="lead"><a href="mailto:kontakt@help.info.gf">kontakt@help.info.gf</a></p>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+
+  <footer class="footer-distributed">
+    <div class="footer-right">
+      
+      <a href="https://fab3F.github.io/link/youtube"><i class="fa fa-youtube"></i></a>
+      <a href="https://fab3F.github.io/link/twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://fab3F.github.io/link/instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://fab3F.github.io/link/github"><i class="fa fa-github"></i></a>
+      <a href="https://fab3F.github.io/link/discord"><i class="fa fa-discord" aria-hidden="true"></i></a>
+      
+    </div>
+    <div class="footer-left">
+  
+      <p class="footer-links">
+        <a class="link-1" href="#home">Home</a>
+        <a href="#projects">Projekte</a>
+        <a href="#contact">Kontakt</a>
+        <a href="/idn">Impressum, Datenschutz & Nutzungsbedingungen</a>
+      </p>
+      
+      <p class="footer-emailtext">E-Mail: 
+        <a class="footer-emaillink" href="mailto:kontakt@help.info.gf">kontakt@help.info.gf</a>
+      </p>
+    </div>
+  </footer>
+  
 </body>
 </html>
