@@ -3,6 +3,7 @@
   position: relative;
   margin: 0 auto;
   overflow-x: hidden;
+  height: auto;
 }
 
 .content {
@@ -38,13 +39,13 @@ p a:hover {
   font-weight: bold;
 }
 
-li a {
+.lead a {
   color: #dba451;
   text-decoration: none;
   font-weight: bold;
 }
 
-li a:hover {
+.lead a:hover {
   color: #a46606;
   text-decoration: underline;
   font-weight: bold;
