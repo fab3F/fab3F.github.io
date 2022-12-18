@@ -6,7 +6,7 @@ let background = document.getElementById("content");
 let h = document.getElementById("home").clientHeight;
 let f = document.getElementById("footer").clientHeight;
 let he = complete_height - h - f - 2;
-if (he < 800) {
+if (he < 960) {
     let hei = 'min-height: ' + he.toString() + 'px;'
     background.setAttribute("style", hei);
 }
