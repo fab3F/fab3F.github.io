@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+    "name": "fab3F Homepage",
+    "short_name": "fab3F Homepage",
+    "description": "fab3F Homepage - Hier gibt es viele Projekte, ausgeklügelt programmiert (natürlich) und Links zu weiteren vielen tollen Projekten!",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
@@ -13,7 +15,10 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+    "theme_color": "#202124",
+    "background_color": "#35363A",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "https://fab3F.github.io",
+    "scope": "https://fab3F.github.io/"
 }
