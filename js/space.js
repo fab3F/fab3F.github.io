@@ -16,5 +16,5 @@ var space = window.setInterval(function(){
         diff = windowH - bodyH;
     }
     let cH = 'min-height: ' + (c + diff).toString + 'px;';
-    c.setAttribute("style", cH);
+    document.getElementById("content").setAttribute("style", cH);
 }, 500);
