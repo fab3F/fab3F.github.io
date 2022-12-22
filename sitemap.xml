@@ -4,16 +4,16 @@
   <url>
     <loc>https://fab3f.github.io/</loc>
     <lastmod>2022-12-18T07:58:25+00:00</lastmod>
-    <priority>100</priority>
+    <priority>1</priority>
   </url>
   <url>
     <loc>https://fab3f.github.io/idn</loc>
     <lastmod>2022-12-18T07:58:25+00:00</lastmod>
-    <priority>50</priority>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://fab3f.github.io/smash</loc>
     <lastmod>2022-12-18T07:58:25+00:00</lastmod>
-    <priority>35</priority>
+    <priority>0.1</priority>
   </url>
 </urlset>
