@@ -1,4 +1,4 @@
-function genSapace(){
+var space = window.setInterval(function(){
     let body = document.body,
         html = document.documentElement;
     let complete_height = Math.max( body.scrollHeight, body.offsetHeight, 
@@ -11,6 +11,4 @@ function genSapace(){
         let hei = 'min-height: ' + he.toString() + 'px;'
         background.setAttribute("style", hei);
     }
-}
-
-let space = setInterval(genSapace, 100);
+  }, 500);
