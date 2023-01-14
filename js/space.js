@@ -11,10 +11,7 @@ var space = window.setInterval(function(){
     }
 
     let windowH = window.innerHeight;
-    let diff = 0;
-    if(bodyH < windowH){
-        diff = windowH - bodyH;
-    }
+    let diff = windowH - bodyH;
     let style = c + diff;
     let cH = 'min-height: ' + style.toString() + 'px;';
     document.getElementById("content").setAttribute("style", cH);
