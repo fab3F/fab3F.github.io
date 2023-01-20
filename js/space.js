@@ -15,4 +15,12 @@ var space = window.setInterval(function(){
     let style = c + diff;
     let cH = 'min-height: ' + style.toString() + 'px;';
     document.getElementById("content").setAttribute("style", cH);
-}, 500);
+}, 50);
+
+let docTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "Hier spielt die Musik!";
+});
+window.addEventListener("focus", () => {
+    document.title = docTitle;
+})
