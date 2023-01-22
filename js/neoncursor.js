@@ -12,3 +12,9 @@ neonCursor({
     sleepTimeCoefX: 0.0025,
     sleepTimeCoefY: 0.0025
 })
+
+var space_app = window.setInterval(function(){
+    let c = document.getElementById("content").clientHeight;
+    let style = 'min-height: ' + c + 'px; display: block;';
+    document.getElementsByTagName("canvas").setAttribute("style", style);
+}, 50);
