@@ -2,7 +2,7 @@
     background-color: #202124;
     position: relative;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow: hidden;
     height: auto;
 }
 
