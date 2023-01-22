@@ -15,6 +15,6 @@ neonCursor({
 
 var space_app = window.setInterval(function(){
     let c = document.getElementById("content").clientHeight;
-    let style = 'min-height: ' + c + 'px; display: block;';
+    let style = 'height: ' + c + 'px; display: block;';
     document.getElementsByTagName("canvas")[0].setAttribute("style", style);
 }, 50);
