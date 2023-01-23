@@ -1,11 +1,10 @@
 function space(){
     let content = document.getElementById("content");
-    let nav = document.getElementById("nav");
     let home = document.getElementById("home");
     let footer = document.getElementById("footer");
     let header = document.getElementsByTagName("header")[0];
 
-    if(content && nav){
+    if(content && home){
         let c = content.clientHeight;
         let h = home.clientHeight;
         let f = footer.clientHeight + 2; // +2 is for border from footer
