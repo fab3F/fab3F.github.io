@@ -21,7 +21,7 @@ var space = window.setInterval(function(){
     let style = c + diff;
     let cH = 'min-height: ' + style.toString() + 'px;';
     document.getElementById("content").setAttribute("style", cH);
-}, 50);
+}, 10);
 
 function stop_space(){
     clearInterval(space);
