@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     
     <url>
-        <loc>https://fab3f.github.io/online-csv-viewer/</loc>
+        <loc>https://fab3f.github.io/online-csv-viewer</loc>
         <lastmod>2022-12-18T07:58:25+00:00</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://fab3f.github.io/online-sqlite-viewer/</loc>
+        <loc>https://fab3f.github.io/online-sqlite-viewer</loc>
         <lastmod>2022-12-18T07:58:25+00:00</lastmod>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://fab3f.github.io/eieruhr/</loc>
+        <lastmod>2022-12-18T07:58:25+00:00</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://profikoch.netlify.app</loc>
+        <lastmod>2022-12-18T07:58:25+00:00</lastmod>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fab3f.github.io/projects/neoncursor</loc>
         <lastmod>2022-12-18T07:58:25+00:00</lastmod>
         <priority>0.7</priority>
     </url>
