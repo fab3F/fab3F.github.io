@@ -1,31 +1,27 @@
-var space = window.setInterval(function(){
+function space(){
+    let content = document.getElementById("content");
+    let nav = document.getElementById("nav");
+    let home = document.getElementById("home");
+    let footer = document.getElementById("footer");
+    let header = document.getElementsByTagName("header")[0];
 
-    //if theres no nav bar, space will not update
-    if(typeof document.getElementsByTagName("nav")[0] === 'undefined'){
-        stop_space();
-        return;
-    } 
-    let c = document.getElementById("content").clientHeight;
-    let h = document.getElementById("home").clientHeight;
-    let f = document.getElementById("footer").clientHeight + 2; // +2 is for border from footer
-
-    let bodyH = c + h + f;
-
-    let head = document.getElementsByTagName("header")[0];
-    if(typeof head != 'undefined'){
-        bodyH = c + h + f + head.clientHeight;
+    if(content && nav){
+        let c = content.clientHeight;
+        let h = home.clientHeight;
+        let f = footer.clientHeight + 2; // +2 is for border from footer
+        let bodyH = c + h + f;
+        if(header){
+            bodyH = c + h + f + header.clientHeight;
+        }
+        let windowH = window.innerHeight;
+        let diff = windowH - bodyH;
+        let style = c + diff;
+        content.style.minHeight = style + "px";
     }
-
-    let windowH = window.innerHeight;
-    let diff = windowH - bodyH;
-    let style = c + diff;
-    let cH = 'min-height: ' + style.toString() + 'px;';
-    document.getElementById("content").setAttribute("style", cH);
-}, 10);
-
-function stop_space(){
-    clearInterval(space);
 }
+
+space();
+window.addEventListener("resize", space());
 
 let docTitle = document.title;
 window.addEventListener("blur", () => {

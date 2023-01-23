@@ -6,6 +6,10 @@
     height: auto;
 }
 
+#content {
+    padding: 1rem;
+}
+
 .content {
     display: block;
     padding-top: 1rem!important;
@@ -17,7 +21,6 @@
     color: #e5e5e5;
     box-shadow: 0 0.15rem 0.7rem rgb(0 0 0 / 10%);
 }
-
 
 .code {
     border: 3px solid #000000;
