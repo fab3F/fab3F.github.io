@@ -21,7 +21,7 @@ function space(){
 }
 
 space();
-window.addEventListener("resize", space());
+window.addEventListener("resize", space);
 
 let docTitle = document.title;
 window.addEventListener("blur", () => {
