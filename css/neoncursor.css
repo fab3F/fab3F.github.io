@@ -11,13 +11,13 @@ body, html, #neoncursor {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+    vertical-align: middle;
   }
   
   #neoncursor h1 {
     width: auto;
     height: 160px;
     line-height: 80px;
-    margin: calc(50vh - var(80px)) auto 0;
     font-size: 60px;
     text-transform: uppercase;
     font-weight: 700;

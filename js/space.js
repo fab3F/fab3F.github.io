@@ -1,5 +1,5 @@
 var space = window.setInterval(function(){
-    if(typeof document.getElementById("content") === "undefined"){
+    if(document.getElementById("content").value == ''){
         stop_space();
         return;
     } 
