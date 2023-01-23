@@ -1,5 +1,7 @@
 var space = window.setInterval(function(){
-    if(document.getElementById("content").value == ''){
+
+    //if theres no nav bar, space will not update
+    if(document.getElementsByTagName("nav")[0] === 'undefined'){
         stop_space();
         return;
     } 
