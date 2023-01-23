@@ -14,14 +14,13 @@ body, html, #neoncursor {
   }
   
   #neoncursor h1 {
-    --fontSize: 60px;
-    --lineHeight: 80px;
     width: auto;
-    height: calc(2 * var(--lineHeight));
-    line-height: var(--lineHeight);
-    margin: calc(50vh - var(--lineHeight)) auto 0;
-    font-size: var(--fontSize);
+    height: 160px;
+    line-height: 80px;
+    margin: calc(50vh - var(80px)) auto 0;
+    font-size: 60px;
     text-transform: uppercase;
+    font-weight: 900;
   }
   
   #neoncursor canvas {
