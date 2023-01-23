@@ -1,13 +1,16 @@
 var space = window.setInterval(function(){
-    let c = document.getElementById("content").clientHeight;
-    let h = document.getElementById("home").clientHeight;
-    let f = document.getElementById("footer").clientHeight + 2; // +2 is for border from footer
-
-    let bodyH = c + h + f;
-
-    let head = document.getElementsByTagName("header")[0];
-    if(typeof head != 'undefined'){
-        bodyH = c + h + f + head.clientHeight;
+    let bodyH = 0;
+    if(typeof document.getElementById("content") != 'undefined'){
+        bodyH += document.getElementById("content").clientHeight;
+    }
+    if(typeof document.getElementById("home") != 'undefined'){
+        bodyH += document.getElementById("home").clientHeight;
+    }
+    if(typeof document.getElementById("footer") != 'undefined'){
+        bodyH += document.getElementById("footer").clientHeight + 2; // +2 is for border from footer
+    }
+    if(typeof document.getElementsByTagName("header")[0] != 'undefined'){
+        bodyH += document.getElementsByTagName("header")[0].clientHeight;
     }
 
     let windowH = window.innerHeight;
