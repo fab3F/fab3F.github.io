@@ -13,12 +13,3 @@ neonCursor({
   sleepTimeCoefX: 0.0025,
   sleepTimeCoefY: 0.0025
 })
-
-/*
-var space_app = window.setInterval(function(){
-    let c = document.getElementById("content").clientHeight;
-    let style = 'height: ' + c + 'px; display: block;';
-    document.getElementsByTagName("canvas")[0].setAttribute("style", style);
-    document.getElementsByTagName("canvas")[0].setAttribute("height", c);
-}, 50);
-*/
