@@ -1,6 +1,7 @@
 var space = window.setInterval(function(){
     if(typeof document.getElementById("content") === "undefined"){
         stop_space();
+        return;
     } 
     let c = document.getElementById("content").clientHeight;
     let h = document.getElementById("home").clientHeight;
