@@ -17,10 +17,16 @@ function space(){
         let style = c + diff;
         content.style.minHeight = style + "px";
     }
+
+    let holder = document.getElementsByClassName("wtHolder")[0];
+    if(holder){
+        holder.removeAttribute("style");
+    }
 }
 
 space();
 window.addEventListener("resize", space);
+window.addEventListener("handsontable:render", space);
 
 let docTitle = document.title;
 window.addEventListener("blur", () => {
