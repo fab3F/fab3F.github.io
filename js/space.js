@@ -18,10 +18,14 @@ function space(){
         content.style.minHeight = style + "px";
     }
 
-    let holder = document.getElementsByClassName("wtHolder")[0];
-    if(holder){
-        holder.removeAttribute("style");
-    }
+    // für die csv viewer tabelle
+    setTimeout(function(){
+        let holder = document.getElementsByClassName("wtHolder")[0];
+        if(holder){
+            holder.removeAttribute("style");
+        }
+    }, 1000);
+    
 }
 
 space();
