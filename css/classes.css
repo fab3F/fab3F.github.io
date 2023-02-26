@@ -83,15 +83,6 @@
         transform: scale(1.05);
     }
 
-    .carousel-caption {
-        transition: transform .3s;
-        border: none;
-    }
-
-    .carousel-caption:hover {
-        transform: scale(1.1);
-    }
-
     .projects-picture {
         transition: transform .3s;
     }
