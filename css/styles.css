@@ -75,8 +75,13 @@ p a:hover {
   max-height: 288px;
 }
 
-.projects-info {
+.projects-info h4 {
   padding-top: 1rem;
+  padding-bottom: 0rem;
+}
+
+.projects-info p {
+  padding-top: 0rem;
   padding-bottom: 1rem;
 }
 
