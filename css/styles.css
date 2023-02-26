@@ -1,10 +1,10 @@
-p a {
+p a:not(.footer-emaillink) {
   color: #dba451;
   text-decoration: none;
   font-weight: bold;
 }
 
-p a:hover {
+p a:hover:not(.footer-emaillink) {
   color: #a46606;
   text-decoration: underline;
   font-weight: bold;
