@@ -23,6 +23,7 @@ function space(){
 space();
 window.addEventListener("resize", space);
 
+/* Das ist um den Titel zu ändern, wenn man in einen anderen Tab geht
 let docTitle = document.title;
 window.addEventListener("blur", () => {
     document.title = "Hier spielt die Musik!";
@@ -30,3 +31,4 @@ window.addEventListener("blur", () => {
 window.addEventListener("focus", () => {
     document.title = docTitle;
 })
+*/

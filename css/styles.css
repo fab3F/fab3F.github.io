@@ -193,3 +193,50 @@ p.projects-info {
   50% { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+
+/* IDN */
+.idn p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #d6cccc
+}
+
+.idn h1 {
+  border-bottom: 1px solid white!important;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-weight: 600!important;
+  color: #fff;
+}
+
+.idn h2 {
+  margin: 15px 0;
+  font-weight: 500!important;
+  color: #fff;
+}
+
+.idn h3 {
+  margin: 15px 0;
+  font-weight: 400!important;
+  color: #fff;
+}
+
+.idn h4 {
+  margin: 10px 0;
+  font-weight: 300!important;
+  color: #fff;
+}
+
+.idn ol {
+  list-style: decimal;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #d6cccc
+}
+
+.idn li {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #d6cccc
+}

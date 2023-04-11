@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="/css/classes.css"type="text/css">
 <link rel="stylesheet" href="/css/styles.css" type="text/css">
 <link rel="stylesheet" href="/css/footer.css" type="text/css">
+<link rel="stylesheet" href="/css/cookies.css" type="text/css">
 
 <!-- Footer Social Media Icons Stylesheet -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
@@ -54,19 +55,44 @@
 <!-- Google Search canonical -->
 <link rel="canonical" href="https://fab3F.github.io/idn" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-YL9HZNY8V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-YL9HZNY8V4');
-</script>
+<!-- Cookies -->
+<script src="/js/cookies.js" defer></script>
 
 </head>
 
 <body>
+
+  <!-- Cookie Popup -->
+  <div id="cookie-popup">
+    <div id="cookie-content">
+      <h2>Datenschutzeinstellungen</h2>
+      <p>Wir verwenden Cookies und ähnliche Technologien, um sicherzustellen, dass wir Ihnen die bestmögliche Erfahrung auf unserer Website bieten können. Sie können Ihre Einstellungen jederzeit in der Fußzeile ändern. 
+        Weitere Informationen dazu finden Sie hier:</p>
+      <p><a href="/idn">Impressum, Datenschutz & Nutzungsbedingungen</a></p>
+      <div class="cookie-button-container">
+        <button id="cookie-accept-all">Alle Akzeptieren</button>
+        <button id="cookie-reject-all">Alle Ablehnen</button>
+        <button id="cookie-settings">Einstellungen</button>
+      </div>
+    </div>
+    <div id="cookie-settings-content">
+      <h2>Einstellungen</h2>
+      <p>Bitte wählen Sie aus, welche Cookies und ähnliche Technologien auf dieser Website verwendet werden dürfen.</p>
+      <form>
+        <h4>Analyse-Technologien und Cookies:</h4>
+        <input type="checkbox" id="switch_gtm" name="gtm" checked/><label for="switch_gtm" class="switch-label">Toggle_GTM</label>
+        <h5 class="cookie-name">Google Tag Manager</h5>
+        <p>Tool, mit dem Tags und Tracking-Codes einer Website zentral verwaltet und auf der Website eingefügt werden können, um das Nutzerverhalten zu messen und zu analysieren.</p>
+        <input type="checkbox" id="switch_ga" name="ga" checked/><label for="switch_ga" class="switch-label">Toggle_GA</label>
+        <h5 class="cookie-name">Google Analytics</h5>
+        <p>Ein Web-Analyse-Tool zu Analyse des Besucherverhaltens, um Erkenntnisse darüber zu gewinnen, wie Nutzer mit der Website interagieren und wie die Website verbessert werden kann.</p>
+      </form>
+      <div class="cookie-button-container">
+        <button id="cookie-save" onclick="saveCookieSettings()">Auswahl speichern</button>
+        <button id="cookie-back" onclick="showCookiePopup()">Zurück</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav id="home" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -95,175 +121,157 @@
     </div>
   </nav>
 
-  <!-- Bilderwechsel -->
-  <header>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image: url('/images/startpage/html.jpg')">
-          <a href="#home">
-            <div class="carousel-caption">
-              <h5>fab3F Homepage</h5>
-              <p>Herzlich Willkommen!</p>
-            </div>
-          </a>
-        </div>
-        <div class="carousel-item" style="background-image: url('/images/startpage/csv.jpg')">
-          <a href="/online-csv-viewer" target="_self">
-            <div class="carousel-caption">
-              <h5>Online CSV Viewer</h5>
-              <p>Zeige CSV-Dateien ganz einfach online an.</p>
-            </div>
-          </a>
-        </div>
-        <div class="carousel-item" style="background-image: url('/images/startpage/coding.jpg')">
-          <a href="/projects/discordbot/" target="_self">
-            <div class="carousel-caption">
-              <h5>Discord Bot</h5>
-              <p>Eigener fab3F Discord Bot!</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Vorheriges</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Nächstes</span>
-      </button>
-    </div>
-  </header>
-
   <!-- Page Content -->
-  <div id="content" class="background">
-    <section id="about" class="py-4">
+  <div id="content" class="background idn">
+    <section id="info" class="py-4">
       <div class="container content">
-        <h1 class="fw-light">Über mich</h1>
-        <p class="lead">Hi! Ich bin <b>fab3F</b>. In meiner Freizeit programmiere ich gerne und entwickle Websites, 
-          Minecraft Plugins oder Mods, Discord Bots und noch vieles mehr! Ich programmiere hauptsächlich mit Java, 
-          aber um JavaScript oder Python kommt man nicht immer herum. Auf meiner anderen Website <a href="https://easyflick.us.to" target="_blank">easyflick.us.to</a>
-          findest du Downloads zu meinen Minecraft Ressource-Paketen und Wallpapern. Außerdem habe ich auch einen <a href="/link/discord" target="_blank">Discord</a>. 
-          Ich wünsche dir Viel Spaß auf meiner Website!</p>
+        <h1>Inhalt und Gültigkeit</h1>
+        <p>Stand 11.04.2023</p>
+        <p>Folgendes Impressum, folgende Datenschutzerklärung und folgende Nutzungsbedingungen gelten für die Website <a href="https://fab3F.github.io" target="_blank">fab3F.github.io</a> und alle sonstigen Inhalte auf dieser Website, einschließlich aller herunterladbaren Inhalte, sofern auf der zugehörigen Seite nichts anderes angegeben ist. 
+        Impressum, Datenschutzerklärung und/oder Nutzungsbedingungen können in Zukunft ohne vorherige Ankündigung geändert werden.</p>
+        <p>Sollte Ihnen ein Fehler auf dieser Seite auffallen, bitten wir Sie, diesen unverzüglich <a href="mailto:kontakt@help.info.gf?subject=Meldung%20eines%Fehlers%20auf%20der%20Homepage">hier</a> per E-Mail zu melden.</p>
+        <h2>Inhalt</h2>
+        <p><a target="_self" href="/idn#impressum">Impressum</a></p>
+        <p><a target="_self" href="/idn#datenschutz">Datenschutzerklärung</a></p>
+        <p><a target="_self" href="/idn#nutzung">Nutzungsbedingungen und Verwendungsrichtlinien</a></p>
       </div>
     </section>
   
-    <section id="projects" class="py-4">
+    <section id="impressum" class="py-4">
       <div class="container content">
-        <h1 class="fw-light">Projekte</h1>
-        <p class="lead">Hier findest du alle Projekte verlinkt. Auf der Website des Projekts erhältst du zusätzliche Informationen über das jeweilige Projekt. 
-          Der Code ist meistens direkt auf der Seite verlinkt. Alternativ findest du diesen aber immer auch auf meinem <a href="/link/github" target="_blank">GitHub</a>. 
-          Falls du bei deiner Suche nicht fündig geworden bist, kannst du auch auf <a href="/link/easyflick" target="_blank">EasyFlick</a> vorbeischauen. 
-          Dort findest du viele weitere Downloads.
-        </p>
-        <h3 class="projects-header fw-light">Web Apps</h3>
-        <div class="projects-list">
-          <div class="project">
-            <a class="projects-picture-link" href="/online-csv-viewer" target="_self">
-              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
-            </a>
-            <h4 class="projects-info"><a href="/online-csv-viewer" target="_self">Online CSV Viewer</a></h4>
-            <p class="projects-info lead">
-              Mit diesem Tool kannst du CSV-Dateien ganz schnell und einfach online anzeigen lassen! 
-              Du musst dir also kein weiteres Programm oder ähnliches herunterladen. 
-              Der Viewer zeigt die sonst so unübersichtliche Datei mit einzigartiger Benutzererfahrung an!
-            </p>
-          </div>
-          <div class="project">
-            <a class="projects-picture-link" href="/online-sqlite-viewer" target="_self">
-              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
-            </a>
-            <h4 class="projects-info"><a href="/online-sqlite-viewer" target="_self">Online SQLite Viewer</a></h4>
-            <p class="projects-info lead">
-              Um SQLite-Dateien ohne eine weitere Anwendung zu betrachten, kannst du einfach diesesn Online-SQLite-Viewer verwenden. 
-              Dieser ermöglicht es, schnell und einfach eine übersichtliche Tabelle aus der SQLite-Datei zu erstellen und anzuzeigen!
-            </p>
-          </div>
-        </div>
+        <h1>Impressum</h1>
 
-        <h3 class="projects-header fw-light">Bots</h3>
-        <div class="projects-list">
-          <div class="project">
-            <a class="projects-picture-link" href="/projects/discordbot" target="_self">
-              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
-            </a>
-            <h4 class="projects-info"><a href="/projects/discordbot" target="_self">fab3F Discord Bot</a></h4>
-            <p class="projects-info lead">
-              Der fab3F Discord Bot ist vollkommen individuell anpassbar und bietet viele besondere Features. 
-              Neben vielen Minigames wie TicTacToe oder Hangman kann der Bot auch jegliche Form von Musik abspielen. 
-              Außerdem gibt es ein eigenes Levelsystem mit automatischer Rollenvergabe, wenn ein neues Level erreicht wurde. 
-              Mit vielen weiteren Funktionen ist der Bot also bestens für deinen Discord-Server geeignet!
-            </p>
-          </div>
-          <div class="project">
-            <a class="projects-picture-link" href="/projects/twitchbot/" target="_self">
-              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
-            </a>
-            <h4 class="projects-info"><a href="/projects/twitchbot/" target="_self">fab3F Twitch Bot</a></h4>
-            <p class="projects-info lead">
-              Der fab3F Twitch Bot ist ein eigener selbst ersteller Twitch Bot zum selbst-hosten. 
-              Der Bot beinhalted grundlegende Funktionen und kann selbstständig erweitert und an die eigenen Bedürfnisse angepasst werden. 
-              Den Bot kannst du dann für deinen eigenen Twitch-Kanal zum Beispiel auf einem Raspberry Pi hosten. 
-              Eine genaue Anleitung ist hier mit dabei!
-            </p>
-          </div>
-        </div>
+        <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+        <p>Fabian Hauke, 123456789<br/>
+          Am Flughafen 7<br/>
+          17419 Zirchow<br/>
+          Deutschland<br/>
+          E-Mail-Adresse: <a href="mailto:kontakt@help.info.gf">kontakt@help.info.gf</a><br/>
+          Lieferadresse-Usedom.de</p>
 
-        <h3 class="projects-header fw-light">Sonstiges</h3>
-        <div class="projects-list">
-          <div class="project">
-            <a class="projects-picture-link" href="/eieruhr" target="_self">
-              <img class="projects-picture" src="/images/startpage/picture_coming_soon.png">
-            </a>
-            <h4 class="projects-info"><a href="/projects/discordbot" target="_self">Eieruhr</a></h4>
-            <p class="projects-info lead">
-              Dies ist eine simple Eieruhr. Damit kannst du einen Timer starten und ein Alarm ertönt, sobald das Ei fertig gekocht ist! 
-              Klein aber fein. 
-              Die Funktionen der Eieruhr wurden ausschließlich mit JavaScript programmiert. 
-              Du kannst die Website auch als App benutzen. Dazu kannst du auf deinem Handy die Website zum Beispiel in Google Chrome öffnen. 
-              Anschließend tippst du im Menü auf "Zum Startbildschrim hinzufügen" und schon kannst du die App auch offline nutzen!
-            </p>
-          </div>
-        </div>
+        <h2>Disclaimer</h2>
+        <h3>Haftung für Inhalte</h3>
+        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+        <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+        <h3>Haftung für Links</h3>
+        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+        <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+        <h3>Urheberrecht</h3>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+        <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
 
-        <p class="lead">
-        Viele weitere und vorallem kleinere Projekte findest du auf <a href="/link/github" target="_blank">GitHub</a>. 
-        </p>
-
-
-      </div>
-      
-    </section>
-
-    <section id="contact" class="py-4">
-      <div class="container content">
-        <h1 class="fw-light">Kontakt und Social Media</h1>
-        <p class="lead mt-4 mb-1">
-          Wenn du mich unterstützen möchtest, kannst du mir gerne auf Social Media folgen. 
-          So bleibst du immer auf dem neusten Stand und verpasst auch keine wichtigen Dinge mehr! 
-        </p>
-        <button onclick="window.open('https://fab3F.github.io/link/twitter','_blank')" class="glow-on-hover" type="button">TWITTER</button>
-        <button onclick="window.open('https://fab3F.github.io/link/youtube','_blank')" class="glow-on-hover" type="button">YOUTUBE</button>
-        <button onclick="window.open('https://fab3F.github.io/link/instagram','_blank')" class="glow-on-hover" type="button">INSTAGRAM</button>
-        <button onclick="window.open('https://fab3F.github.io/link/github','_blank')" class="glow-on-hover" type="button">GITHUB</button>
-        <button onclick="window.open('https://fab3F.github.io/link/twitch','_blank')" class="glow-on-hover" type="button">TWITCH</button>
-        <p class="lead mt-4 mb-1">
-          Wenn du Fragen hast oder gerade nach einem Discord Server suchst, kannst du auch gerne meinem Discord beitreten: 
-        </p>
-        <button onclick="window.open('https://fab3F.github.io/link/discord','_blank')" class="glow-on-hover" type="button">DISCORD</button>
-        <p class="lead mt-4 mb-1">
-          Ansonsten kannst du auch eine E-Mail schreiben an: 
-        </p>
-        <p class="lead"><a href="mailto:kontakt@help.info.gf">kontakt@help.info.gf</a></p>
-
+        <p>Quelle des Impressums: <a href="https://www.e-recht24.de/impressum-generator.html" target="_blank">https://www.e-recht24.de/impressum-generator.html</a></p>
       </div>
     </section>
 
+    <section id="datenschutz" class="py-4">
+      <div class="container content">
+        <h1>Datenschutz&shy;erkl&auml;rung</h1>
+        <h2>1. Datenschutz auf einen Blick</h2>
+        <h3>Allgemeine Hinweise</h3> <p>Die folgenden Hinweise geben einen einfachen &Uuml;berblick dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Ausf&uuml;hrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgef&uuml;hrten Datenschutzerkl&auml;rung.</p>
+        <h3>Datenerfassung auf dieser Website</h3> <h4>Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser Website?</h4> <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser Datenschutzerkl&auml;rung entnehmen.</p> <h4>Wie erfassen wir Ihre Daten?</h4> <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p> <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p> <h4>Wof&uuml;r nutzen wir Ihre Daten?</h4> <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gew&auml;hrleisten. Andere Daten k&ouml;nnen zur Analyse Ihres Nutzerverhaltens verwendet werden.</p> <h4>Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?</h4> <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben au&szlig;erdem ein Recht, die Berichtigung oder L&ouml;schung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, k&ouml;nnen Sie diese Einwilligung jederzeit f&uuml;r die Zukunft widerrufen. Au&szlig;erdem haben Sie das Recht, unter bestimmten Umst&auml;nden die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde zu.</p> <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
+        <h3>Analyse-Tools und Tools von Dritt&shy;anbietern</h3> <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen.</p> <p>Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerkl&auml;rung.</p>
+        <h2>2. Hosting</h2>
+        <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+        <h3>Externes Hosting</h3> <p>Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert. Hierbei kann es sich v.&nbsp;a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die &uuml;ber eine Website generiert werden, handeln.</p> <p>Das externe Hosting erfolgt zum Zwecke der Vertragserf&uuml;llung gegen&uuml;ber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p> <p>Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit verarbeiten, wie dies zur Erf&uuml;llung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.</p> <p>Wir setzen folgende(n) Hoster ein:</p>
+        <p>GitHub Inc.<br/>
+          88 Colin P Kelly Jr St<br/>
+          San Francisco, CA 94107<br/>
+          United States</p>
+        <h2>3. Allgemeine Hinweise und Pflicht&shy;informationen</h2>
+        <h3>Datenschutz</h3> <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerkl&auml;rung.</p> <p>Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Die vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch, wie und zu welchem Zweck das geschieht.</p> <p>Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht m&ouml;glich.</p> <p>Hinweis! Sie können Ihre Datenschutzeinstellungen jederzeit in der Fußzeile ändern, oder <a href="#" onclick="showCookiePopup()">hier</a> klicken.</p>
+        <h3>Hinweis zur verantwortlichen Stelle</h3> <p>Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser Website ist:</p>
+        <p>Fabian Hauke, 123456789<br/>
+          Am Flughafen 7<br/>
+          17419 Zirchow<br/>
+          Deutschland<br/>
+          E-Mail-Adresse: <a href="mailto:kontakt@help.info.gf">kontakt@help.info.gf</a><br/>
+          Lieferadresse-Usedom.de</p>
+        <p>Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B. Namen, E-Mail-Adressen o. &Auml;.) entscheidet.</p>
+
+        <h3>Speicherdauer</h3> <p>Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt. Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gel&ouml;scht, sofern wir keine anderen rechtlich zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer personenbezogenen Daten haben (z.&nbsp;B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.</p>
+        <h3>Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website</h3> <p>Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erf&uuml;llung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser Datenschutzerkl&auml;rung informiert.</p>
+        <h3>Hinweis zur Datenweitergabe in die USA und sonstige Drittstaaten</h3> <p>Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den USA oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten. Wenn diese Tools aktiv sind, k&ouml;nnen Ihre personenbezogene Daten in diese Drittstaaten &uuml;bertragen und dort verarbeitet werden. Wir weisen darauf hin, dass in diesen L&auml;ndern kein mit der EU vergleichbares Datenschutzniveau garantiert werden kann. Beispielsweise sind US-Unternehmen dazu verpflichtet, personenbezogene Daten an Sicherheitsbeh&ouml;rden herauszugeben, ohne dass Sie als Betroffener hiergegen gerichtlich vorgehen k&ouml;nnten. Es kann daher nicht ausgeschlossen werden, dass US-Beh&ouml;rden (z.&nbsp;B. Geheimdienste) Ihre auf US-Servern befindlichen Daten zu &Uuml;berwachungszwecken verarbeiten, auswerten und dauerhaft speichern. Wir haben auf diese Verarbeitungst&auml;tigkeiten keinen Einfluss.</p><h3>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3> <p>Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.</p>
+        <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3> <p>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GR&Uuml;NDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN GEST&Uuml;TZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKL&Auml;RUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR K&Ouml;NNEN ZWINGENDE SCHUTZW&Uuml;RDIGE GR&Uuml;NDE F&Uuml;R DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).</p> <p>WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH F&Uuml;R DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).</p>
+        <h3>Beschwerde&shy;recht bei der zust&auml;ndigen Aufsichts&shy;beh&ouml;rde</h3> <p>Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde, insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutma&szlig;lichen Versto&szlig;es zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.</p>
+        <h3>Recht auf Daten&shy;&uuml;bertrag&shy;barkeit</h3> <p>Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren Format aush&auml;ndigen zu lassen. Sofern Sie die direkte &Uuml;bertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.</p>
+        <h3>Auskunft, Berichtigung und L&ouml;schung</h3> <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder L&ouml;schung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie sich jederzeit an uns wenden.</p>
+        <h3>Recht auf Einschr&auml;nkung der Verarbeitung</h3> <p>Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der Verarbeitung besteht in folgenden F&auml;llen:</p> <ol> <li>Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung verlangen.</li> <li>Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen, Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht, statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> <li>Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abw&auml;gung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen &uuml;berwiegen, haben Sie das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.</li> </ol> <p>Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderen nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen Union oder eines Mitgliedstaats verarbeitet werden.</p>
+        <h3>SSL- bzw. TLS-Verschl&uuml;sselung</h3> <p>Diese Seite nutzt aus Sicherheitsgr&uuml;nden und zum Schutz der &Uuml;bertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschl&uuml;sselung. Eine verschl&uuml;sselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von &bdquo;http://&ldquo; auf &bdquo;https://&ldquo; wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p> <p>Wenn die SSL- bzw. TLS-Verschl&uuml;sselung aktiviert ist, k&ouml;nnen die Daten, die Sie an uns &uuml;bermitteln, nicht von Dritten mitgelesen werden.</p>
+        <h2>4. Datenerfassung auf dieser Website</h2>
+        <h3>Cookies</h3> <p>Unsere Internetseiten verwenden so genannte &bdquo;Cookies&ldquo;. Cookies sind kleine Datenpakete und richten auf Ihrem Endger&auml;t keinen Schaden an. Sie werden entweder vor&uuml;bergehend f&uuml;r die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endger&auml;t gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gel&ouml;scht. Permanente Cookies bleiben auf Ihrem Endger&auml;t gespeichert, bis Sie diese selbst l&ouml;schen oder eine automatische L&ouml;schung durch Ihren Webbrowser erfolgt.</p> <p>Cookies k&ouml;nnen von uns (First-Party-Cookies) oder von Drittunternehmen stammen (sog. Third-Party-Cookies). Third-Party-Cookies erm&ouml;glichen die Einbindung bestimmter Dienstleistungen von Drittunternehmen innerhalb von Webseiten (z.&nbsp;B. Cookies zur Abwicklung von Zahlungsdienstleistungen).</p> <p>Cookies haben verschiedene Funktionen. Zahlreiche Cookies sind technisch notwendig, da bestimmte Webseitenfunktionen ohne diese nicht funktionieren w&uuml;rden (z.&nbsp;B. die Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies k&ouml;nnen zur Auswertung des Nutzerverhaltens oder zu Werbezwecken verwendet werden.</p> <p>Cookies, die zur Durchf&uuml;hrung des elektronischen Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen erw&uuml;nschter Funktionen (z.&nbsp;B. f&uuml;r die Warenkorbfunktion) oder zur Optimierung der Website (z.&nbsp;B. Cookies zur Messung des Webpublikums) erforderlich sind (notwendige Cookies), werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein berechtigtes Interesse an der Speicherung von notwendigen Cookies zur technisch fehlerfreien und optimierten Bereitstellung seiner Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage dieser Einwilligung (Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG); die Einwilligung ist jederzeit widerrufbar.</p> <p>Sie k&ouml;nnen Ihren Browser so einstellen, dass Sie &uuml;ber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies f&uuml;r bestimmte F&auml;lle oder generell ausschlie&szlig;en sowie das automatische L&ouml;schen der Cookies beim Schlie&szlig;en des Browsers aktivieren. Bei der Deaktivierung von Cookies kann die Funktionalit&auml;t dieser Website eingeschr&auml;nkt sein.</p> <p>Welche Cookies und Dienste auf dieser Website eingesetzt werden, k&ouml;nnen Sie dieser Datenschutzerkl&auml;rung entnehmen.</p> <p>Hinweis! Sie können Ihre Datenschutzeinstellungen jederzeit in der Fußzeile ändern, oder <a href="#" onclick="showCookiePopup()">hier</a> klicken.</p>
+        <h3>Anfrage per E-Mail, Telefon oder Telefax</h3> <p>Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p> <p>Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung vorvertraglicher Ma&szlig;nahmen erforderlich ist. In allen &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.</p> <p>Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die Datenspeicherung entf&auml;llt (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.</p>
+        <h2>5. Plugins und Tools</h2>
+        <h3>YouTube mit erweitertem Datenschutz</h3> <p>Diese Website bindet Videos der Website YouTube ein. Betreiber der Seiten ist die Google Ireland Limited (&bdquo;Google&ldquo;), Gordon House, Barrow Street, Dublin 4, Irland.</p> <p>Wir nutzen YouTube im erweiterten Datenschutzmodus. Dieser Modus bewirkt laut YouTube, dass YouTube keine Informationen &uuml;ber die Besucher auf dieser Website speichert, bevor diese sich das Video ansehen. Die Weitergabe von Daten an YouTube-Partner wird durch den erweiterten Datenschutzmodus hingegen nicht zwingend ausgeschlossen. So stellt YouTube &ndash; unabh&auml;ngig davon, ob Sie sich ein Video ansehen &ndash; eine Verbindung zum Google DoubleClick-Netzwerk her.</p> <p>Sobald Sie ein YouTube-Video auf dieser Website starten, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Wenn Sie in Ihrem YouTube-Account eingeloggt sind, erm&ouml;glichen Sie YouTube, Ihr Surfverhalten direkt Ihrem pers&ouml;nlichen Profil zuzuordnen. Dies k&ouml;nnen Sie verhindern, indem Sie sich aus Ihrem YouTube-Account ausloggen.</p> <p>Des Weiteren kann YouTube nach Starten eines Videos verschiedene Cookies auf Ihrem Endger&auml;t speichern oder vergleichbare Wiedererkennungstechnologien (z.&nbsp;B. Device-Fingerprinting) einsetzen. Auf diese Weise kann YouTube Informationen &uuml;ber Besucher dieser Website erhalten. Diese Informationen werden u.&nbsp;a. verwendet, um Videostatistiken zu erfassen, die Anwenderfreundlichkeit zu verbessern und Betrugsversuchen vorzubeugen.</p> <p>Gegebenenfalls k&ouml;nnen nach dem Start eines YouTube-Videos weitere Datenverarbeitungsvorg&auml;nge ausgel&ouml;st werden, auf die wir keinen Einfluss haben.</p> <p>Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschlie&szlig;lich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und &sect; 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endger&auml;t des Nutzers (z.&nbsp;B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.</p> <p>Weitere Informationen &uuml;ber Datenschutz bei YouTube finden Sie in deren Datenschutzerkl&auml;rung unter: <a href="https://policies.google.com/privacy?hl=de" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=de</a>.</p>
+        <p>Quelle der Datenschutzerklärung vom 1. bis zum 5. Absatz: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+        
+        <h2>6. Nutzung des Google Tag Managers</h2>
+        <p>Für unsere Webseite verwenden wir den Google Tag Manager des Unternehmens Google Inc. (1600 Amphitheatre Parkway Mountain View, CA 94043, USA). Dieser Tag Manager ist eines von vielen hilfreichen Marketing-Produkten von Google. Über den Google Tag Manager können wir Code-Abschnitte von diversen Trackingtools, die wir auf unserer Webseite verwenden, zentral einbauen und verwalten.</p>
+        <h3>Was ist der Google Tag Manager?</h3>
+        <p>Der Google Tag Manager ist ein Organisationstool, mit dem wir Webseiten-Tags zentral und über eine Benutzeroberfläche einbinden und verwalten können. Als Tags bezeichnet man kleine Code-Abschnitte, die beispielsweise Ihre Aktivitäten auf unserer Webseite aufzeichnen (tracken). Dafür werden JavaScript-Code-Abschnitte in den Quelltext unserer Seite eingesetzt. Die Tags stammen oft von Google-internen Produkten wie Google Ads oder Google Analytics, aber auch Tags von anderen Unternehmen können über den Manager eingebunden und verwaltet werden. Solche Tags übernehmen unterschiedliche Aufgaben. Sie können Browserdaten sammeln, Marketingtools mit Daten füttern, Buttons einbinden, Cookies setzen und auch Nutzer über mehrere Webseiten hinweg verfolgen.</p>
+        <h3>Warum verwenden wir den Google Tag Manager für unserer Webseite?</h3>
+        <p>Um unsere Webseite für Sie und alle Menschen, die sich für unsere Produkte und Dienstleistungen interessieren, so gut wie möglich zu gestalten, brauchen wir diverse Trackingtools wie beispielsweise Google Analytics. Die erhobenen Daten dieser Tools zeigen uns, was Sie am meisten interessiert, wo wir unsere Leistungen verbessern können und welchen Menschen wir unsere Angebote noch zeigen sollten. Und damit dieses Tracking funktioniert, müssen wir entsprechende JavaScript-Codes in unsere Webseite einbinden. Grundsätzlich könnten wir jeden Code-Abschnitt der einzelnen Tracking-Tools separat in unseren Quelltext einbauen, was allerdings viel Zeit. Deswegen nutzen wir den Google Tag Manager, um eine zentrale Verwaltungsstelle für die nötigen Skripte zu haben.</p>
+        <h3>Welche Daten werden vom Google Tag Manager gespeichert?</h3>
+        <p>Der Tag Manager selbst ist eine Domain, die keine Cookies setzt und keine Daten speichert. Er fungiert als bloßer „Verwalter“ der implementierten Tags. Die Daten erfassen die einzelnen Tags der unterschiedlichen Web-Analysetools. Die Daten werden im Google Tag Manager zu den einzelnen Tracking-Tools durchgeschleust und nicht gespeichert.</p>
+        <p>Ganz anders sieht das allerdings mit den eingebundenen Tags der verschiedenen Web-Analysetools, wie zum Beispiel Google Analytics, aus. Je nach Analysetool werden meist mit Hilfe von Cookies verschiedenen Daten über Ihr Webverhalten gesammelt, gespeichert und verarbeitet. Dafür lesen Sie bitte unsere Datenschutztexte zu den einzelnen Analyse- und Trackingtools, die wir auf unserer Webseite verwenden.</p>
+        <p>In den Kontoeinstellungen des Tag Managers haben wir Google erlaubt, dass Google anonymisierte Daten von uns erhält. Dabei handelt es sich aber nur um die Verwendung und Nutzung unseres Tag Managers und nicht um Ihre Daten, die über die Code-Abschnitte gespeichert werden. Wir ermöglichen Google und anderen, ausgewählte Daten in anonymisierter Form zu erhalten. Wir stimmen somit der anonymen Weitergabe unseren Website-Daten zu. Welche zusammengefassten und anonymen Daten genau weitergeleitet werden, konnten wir – trotz langer Recherche – nicht in Erfahrung bringen. Google löscht dabei alle Infos, die unsere Webseite identifizieren könnten. Google fasst die Daten mit Hunderten anderen anonymen Webseiten-Daten zusammen und erstellt, im Rahmen von Benchmarking-Maßnahmen, Usertrends. Bei Benchmarking werden eigene Ergebnisse mit jenen der Mitbewerber verglichen. Auf Basis der erhobenen Informationen können Prozesse optimiert werden.</p>
+        <h3>Wie lange und wo werden die Daten gespeichert?</h3>
+        <p>Wenn Google Daten speichert, dann werden diese Daten auf den eigenen Google-Servern gespeichert, welche auf der ganzen Welt verteilt sind, aber größtenteils in Amerika stehen. Unter <a href="https://www.google.com/about/datacenters/inside/locations/?hl=de" target="_blank">https://www.google.com/about/datacenters/inside/locations/?hl=de</a> können Sie genau nachlesen, wo sich die Google-Server befinden.</p>
+        <p>Wie lange die einzelnen Tracking-Tools Daten von Ihnen speichern, entnehmen Sie unseren individuellen Datenschutztexten zu den einzelnen Tools.</p>
+        <h3>Wie kann ich meine Daten löschen bzw. die Datenspeicherung verhindern?</h3>
+        <p>Der Google Tag Manager selbst setzt keine Cookies, sondern verwaltet Tags verschiedener Tracking-Webseiten. In unseren Datenschutztexten zu den einzelnen Tracking-Tools, finden Sie detaillierte Informationen wie Sie Ihre Daten löschen bzw. verwalten können.</p>
+        <p>Google ist aktiver Teilnehmer beim EU-U.S. Privacy Shield Framework, wodurch der korrekte und sichere Datentransfer persönlicher Daten geregelt wird. Mehr Informationen dazu finden Sie auf <a href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&tid=311141511" target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&tid=311141511</a>. Wenn Sie mehr über den Google Tag Manager erfahren wollen, empfehlen wir Ihnen die FAQs unter <a href="https://www.google.com/intl/de/tagmanager/faq.html" target="_blank">https://www.google.com/intl/de/tagmanager/faq.html</a>.</p>
+        <h3>Rechtsgrundlage</h3>
+        <p>Der Einsatz des Google Tag Managers setzt Ihre Einwilligung voraus, welche wir mit unserem Cookie Popup eingeholt haben. Diese Einwilligung stellt laut Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) die Rechtsgrundlage für die Verarbeitung personenbezogener Daten, wie sie bei der Erfassung durch Web-Analytics Tools vorkommen kann, dar.</p>
+        <p>Zusätzlich zur Einwilligung besteht von unserer Seite ein berechtigtes Interesse daran, das Verhalten der Websitebesucher zu analysieren und so unser Angebot technisch und wirtschaftlich zu verbessern. Mit Hilfe des Google Tag Managers können wir unsere Wirtschaftlichkeit verbessern. Die Rechtsgrundlage dafür ist Art. 6 Abs. 1 lit. f DSGVO (Berechtigte Interessen). Wir setzen den Google Tag Manager gleichwohl nur ein, soweit Sie eine Einwilligung erteilt haben.</p>
+        <p>Google verarbeitet Daten von Ihnen u.a. auch in den USA. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann mit verschiedenen Risiken für die Rechtmäßigkeit und Sicherheit der Datenverarbeitung einhergehen.</p>
+        <p>Als Grundlage der Datenverarbeitung bei Empfängern mit Sitz in Drittstaaten (außerhalb der Europäischen Union, Island, Liechtenstein, Norwegen, also insbesondere in den USA) oder einer Datenweitergabe dorthin verwendet Google sogenannte Standardvertragsklauseln (= Art. 46. Abs. 2 und 3 DSGVO). Standardvertragsklauseln (Standard Contractual Clauses - SCC) sind von der EU-Kommission bereitgestellte Mustervorlagen und sollen sicherstellen, dass Ihre Daten auch dann den europäischen Datenschutzstandards entsprechen, wenn diese in Drittländer (wie beispielsweise in die USA) überliefert und dort gespeichert werden. Durch diese Klauseln verpflichtet sich Google, bei der Verarbeitung Ihrer relevanten Daten, das europäische Datenschutzniveau einzuhalten, selbst wenn die Daten in den USA gespeichert, verarbeitet und verwaltet werden. Diese Klauseln basieren auf einem Durchführungsbeschluss der EU-Kommission. Sie finden den Beschluss und die entsprechenden Standardvertragsklauseln u.a. hier: <a href="https://eurlex.europa.eu/eli/dec_impl/2021/914/oj?locale=de" target="_blank">https://eurlex.europa.eu/eli/dec_impl/2021/914/oj?locale=de</a></p>
+        <p>Die Google Ads Datenverarbeitungsbedingungen (Google Ads Data Processing Terms), welche auf die Standardvertragsklauseln verweisen, finden Sie unter <a href="https://business.safety.google/intl/de/adsprocessorterms/">https://business.safety.google/intl/de/adsprocessorterms/</a></p>
+        <p>Wenn Sie mehr über den Google Tag Manager erfahren wollen, empfehlen wir Ihnen die FAQs unter <a href="https://support.google.com/tagmanager/?hl=de#topic=3441530">https://support.google.com/tagmanager/?hl=de#topic=3441530</a>.</p>
+        <p>Quelle der Datenschutzerklärung für den 6. Absatz: <a href="https://www.adsimple.de/datenschutz-generator/" target="_blank">Datenschutz Generator von AdSimple</a></p>
+        
+        <h2>7. Nutzung von Google Analytics</h2>
+        <p>Wir verwenden Google Analytics, um die Website-Nutzung zu analysieren. Die daraus gewonnenen Daten werden genutzt, um unsere Website sowie Werbemaßnahmen zu optimieren.</p>
+        <p>Google Analytics wird uns von Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland) bereitgestellt. Google verarbeitet die Daten zur Website-Nutzung in unserem Auftrag und verpflichtet sich vertraglich zu Maßnahmen, um die Sicherheit und Vertraulichkeit der verarbeiteten Daten zu gewährleisten.</p>
+        <p>Während Ihres Website-Besuchs werden u.a. folgende Daten aufgezeichnet:</p>
+        <ol>
+          <li>Aufgerufene Seiten</li>
+          <li>Bestellungen inkl. des Umsatzes und der bestellten Produkte</li>
+          <li>Die Erreichung von "Website-Zielen" (z.B. Kontaktanfragen und Newsletter-Anmeldungen)</li>
+          <li>Ihr Verhalten auf den Seiten (beispielsweise Verweildauer, Klicks, Scrollverhalten)</li>
+          <li>Ihr ungefährer Standort (Land und Stadt)</li>
+          <li>Ihre IP-Adresse (in gekürzter Form, sodass keine eindeutige Zuordnung möglich ist)</li>
+          <li>Technische Informationen wie Browser, Internetanbieter, Endgerät und Bildschirmauflösung</li>
+          <li>Herkunftsquelle Ihres Besuchs (d.h. über welche Website bzw. über welches Werbemittel Sie zu uns gekommen sind)</li>
+          <li>Es werden niemals persönliche Daten wie Name, Anschrift oder Kontaktdaten an Google Analytics übertragen.</li>
+        </ol>
+        <p>Diese Daten werden an Server von Google in den USA übertragen. Wir weisen darauf hin, dass in den USA datenschutzrechtlich nicht das gleiche Schutzniveau wie innerhalb der EU garantiert werden kann.</p>
+        <p>Google Analytics speichert Cookies in Ihrem Webbrowser für die Dauer von zwei Jahren seit Ihrem letzten Besuch. Diese Cookies enthaltene eine zufallsgenerierte User-ID, mit der Sie bei zukünftigen Website-Besuchen wiedererkannt werden können.</p>
+        <p>Die aufgezeichneten Daten werden zusammen mit der zufallsgenerierten User-ID gespeichert, was die Auswertung pseudonymer Nutzerprofile ermöglicht. Diese nutzerbezogenen Daten werden automatisch nach 14 Monaten gelöscht. Sonstige Daten bleiben in aggregierter Form unbefristet gespeichert.</p>
+        <p>Sollten Sie mit der Erfassung nicht einverstanden sein, können Sie diese mit der einmaligen Installation des Browser-Add-ons zur Deaktivierung von Google Analytics unterbinden oder durch das Ablehnen der Cookies über unseren Cookie-Einstellungs-Dialog.</p>
+        <p>Quelle der Datenschutzerklärung für den 7. Absatz: <a href="https://traffic3.net/" target="_blank">traffic3.net</a></p>
+      </div>
+    </section>
+
+    <section id="nutzung" class="py-4">
+      <div class="container content">
+        <h1>Nutzungsbedingungen und Verwendungsrichtlinien</h1>
+        <p>F&uuml;r alle Minecraft-Ressourcenpakete, Minecraft-Datapacks, Minecraft-Welten, Plugins, Bots, Apps und alle sonstigen Inhalte auf dieser Webseite gelten die nun folgenden Nutzungsbedingungen und Verwendungsrichtlinien.</p>
+        <h3>Verwendung</h3>
+        <p>Sie d&uuml;rfen alle Inhalte f&uuml;r private und nicht kommerzielle Zwecke verwenden und herunterladen. Wenn Sie den Inhalt anderweitig verwenden wollen, und zum Beispiel auf einer anderen sozialen Plattform vorstellen wollen, m&uuml;ssen Sie einen Quellenverweis angeben. Das hei&szlig;t Sie m&uuml;ssen im Beitrag und in der Beschreibung angeben, woher Sie den Inhalt haben. Das k&ouml;nnte zum Beispiel so aussehen:</p>
+        <p><span style="color: rgb(147, 101, 184);">Das im Video gezeigte Werk wurde von fab3F erstellt.</span><br><span style="color: rgb(147, 101, 184);">Den Download findest du auf https://fab3F.github.io.</span></p>
+        <h3>Benutzung f&uuml;r eigene Zwecke</h3>
+        <p>Wenn Sie kreativ mit einem Werk arbeiten, geh&ouml;rt es quasi Ihnen. Das bedeutet, wenn Sie es umgestalten oder in eigene Projekte integrieren - also dem Werk geistiges Eigentum hinzuf&uuml;gst - ist es quasi Ihr Werk. Trotzdem m&uuml;ssen Sie auch hier einen Quellenverweis zu der Grundlage angeben.</p>
+        <h3>Eigentum</h3>
+        <p>Sie d&uuml;rfen die Werke in ihrer Rohform nicht als ihr geistiges Eigentum ausgeben.<br>Sie d&uuml;rfen keinen Beitrag ohne Quellenverweis zu einem Werk ver&ouml;ffentlichen.<br>Sie d&uuml;rfen ein Werk nicht auf einer anderen Plattform zum Download anbieten. In diesem Fall m&uuml;ssen sie auf den originalen Download-Link verweisen, beispielsweise auf <a href="https://fab3F.github.io">https://fab3F.github.io</a>.</p>
+        <h3>Verkauf</h3>
+        <p>Sie d&uuml;rfen die Werke nicht gegen Geld verkaufen. Sie versto&szlig;en damit m&ouml;glicherweise auch gegen andere Richtlinien.</p>
+        <h3>Ausnahmen</h3>
+        <p>Falls es Ausnahmen zu den oben genannten Nutzungsbedingungen geben sollte, wird auf der Seite des jeweiligen Inhalts darauf hingewiesen. Ansonsten gelten die Nutzungsbedingungen f&uuml;r alle Minecraft-Ressourcenpakete, Minecraft-Datapacks, Minecraft-Welten, Plugins, Bots, Apps und alle sonstigen Inhalte auf dieser Webseite.</p>
+        <h3>Wichtig</h3>
+        <p>Sollte Ihnen jemand auffallen, der gegen die Nutzungsbedingungen oder Verwendungsrichtlinien verstößt, bitten wir Sie, den Vorfall per E-Mail <a href="mailto:kontakt@help.info.gf?subject=Meldung%20eines%20Verstoßes%20auf%20der%20Homepage">hier</a> zu melden.</p>
+      </div>
+    </section>
   </div>
 
   <!-- Footer -->
@@ -284,6 +292,7 @@
         <a href="#projects">Projekte</a>
         <a href="#contact">Kontakt</a>
         <a href="/idn">Impressum, Datenschutz & Nutzungsbedingungen</a>
+        <a href="#" onclick="showCookiePopup()">Datenschutzeinstellungen</a>
       </p>
       
       <p class="footer-emailtext">E-Mail: 
