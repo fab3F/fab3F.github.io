@@ -12,7 +12,7 @@ body, html, #neoncursor {
   text-align: center;
   text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
 }
-  
+
 #neoncursor h1 {
   --lineHeight: 80px;
   width: auto;
@@ -27,7 +27,7 @@ body, html, #neoncursor {
   user-select: none; /* Standard */
 }
   
-#neoncursor canvas {
+#neoncursor {
   display: block;
   position: fixed;
   z-index: -1;
