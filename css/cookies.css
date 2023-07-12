@@ -62,7 +62,7 @@
 .switch-label:after {
 	content: '';
 	position: absolute;
-	top: 1.75px;
+	top: 1.1px;
 	left: 1.75px;
 	width: 22.5px;
 	height: 22.5px;
