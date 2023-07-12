@@ -70,6 +70,7 @@ function loadGTM_GA(){
 
         // Nur Google Analytics aktivieren, wenn der Benutzer das entsprechende Kontrollkästchen aktiviert hat
         if (localStorage.getItem('ga') === 'true') {
+            console.log("google tag und analys");
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
