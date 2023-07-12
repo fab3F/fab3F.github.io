@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-* {
+section.notFound * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
