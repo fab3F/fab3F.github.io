@@ -67,7 +67,7 @@ function loadGTM_GA(){
     // Nur Google Tag Manager aktivieren, wenn der Benutzer das entsprechende Kontrollkästchen aktiviert hat
     if (localStorage.getItem('gtm') === 'true') {
         let gtmScript = document.createElement('script');
-        gtmScript.setAttribute("async");
+        gtmScript.setAttribute("async", "");
         if (currentHostname === 'mkaq.github.io') {
             gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-4PVTVGRQH8';
         } else {
