@@ -32,23 +32,32 @@ var validationChecker = function(link) {
 
     link = link.replace('http://', 'https://');
 
-    const regex = /(?:https?:\/\/)?(?:www\.)?mediafire\.com\/(?:view|download|file)?\/?([^/?]+)\/([^/?]+)/i;
-    const match = link.match(regex);
+
+    const regex1 = /(?:https?:\/\/)?(?:www\.)?mediafire\.com\/(?:view|download|file)?\/?([^/?]+)\/([^/?]+)/i;
+    const match1 = link.match(regex1);
     
-    if (match) {
-        const identifier = match[1];
-        const filename = match[2];
-        return 'https://mkaq.github.io/?a=' + identifier + '/' + filename;
+    if (match1) {
+
+        const identifier1 = match1[1];
+        const filename1 = match1[2];
+
+        return 'https://mkaq.github.io/?a=' + identifier1 + '/' + filename1;
+
     } else {
-        const simplifiedRegex = /([^/?]+)\/([^/?]+)/i;
-        const simplifiedMatch = link.match(simplifiedRegex);
-        
-        if (simplifiedMatch) {
-            const identifier = simplifiedMatch[1];
-            const filename = simplifiedMatch[2];
-            return 'https://mkaq.github.io/?a=' + identifier + '/' + filename;
+
+        const regex2 = /^(.*?)\/(.*?)$/;
+        const match2 = link.match(regex2);
+
+        if (match2) {
+            const identifier2 = match2[1];
+            const filename2 = match2[2];
+
+            return 'https://mkaq.github.io/?a=' + identifier2 + '/' + filename2;
+            
+        } else{
+            return 'a'; // Link passt nicht zu den erwarteten Formaten
         }
-        
-        return 'a'; // Link passt nicht zu den erwarteten Formaten
+
+    
     }
 };
