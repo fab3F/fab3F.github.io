@@ -61,23 +61,37 @@ function saveCookieSettings() {
   }
 
 function loadGTM_GA(){
+
+    let currentHostname = window.location.hostname;
+
     // Nur Google Tag Manager aktivieren, wenn der Benutzer das entsprechende Kontrollkästchen aktiviert hat
     if (localStorage.getItem('gtm') === 'true') {
         let gtmScript = document.createElement('script');
-        gtmScript.setAttribute("asnyc", "");
-        gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YL9HZNY8V4';
+        gtmScript.setAttribute("async");
+        if (currentHostname === 'mkaq.github.io') {
+            gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-4PVTVGRQH8';
+        } else {
+            gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-YL9HZNY8V4';
+        }
         document.head.appendChild(gtmScript);
 
         // Nur Google Analytics aktivieren, wenn der Benutzer das entsprechende Kontrollkästchen aktiviert hat
         if (localStorage.getItem('ga') === 'true') {
-            console.log("google tag und analys");
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-YL9HZNY8V4');
+            if (currentHostname === 'mkaq.github.io') {
+                gtag('config', 'G-4PVTVGRQH8');
+            } else {
+                gtag('config', 'G-YL9HZNY8V4');
+            }
+            
         }
     }
 }
+
+
+
 
 
 
