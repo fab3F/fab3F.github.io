@@ -43,6 +43,7 @@ var validationChecker = function(link) {
 
     const short = /^(https?:\/\/)?(www\.)?mediafire\.com\/\?[a-zA-Z0-9]+$/m;
     const ident = /^[a-zA-Z0-9]+$/m;
+    
     const matchIdentifier = (pattern) => {
         const match = link.match(pattern);
         return match ? match[1] : 'a';
@@ -52,7 +53,7 @@ var validationChecker = function(link) {
     let identifier = 'a';
 
     if (ident.test(link)) {
-        identifier = 'https://mkaq.github.io/?a=' + url;
+        identifier = 'https://mkaq.github.io/?a=' + link;
     } else if (short.test(link)) {
         identifier = 'https://mkaq.github.io/?a=' + matchIdentifier(/mediafire\.com\/\?([a-zA-Z0-9]+)/);
     }
