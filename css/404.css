@@ -2,7 +2,6 @@
 
 section.notFound * {
     padding: 0;
-    margin: 0;
     box-sizing: border-box;
     font-family: 'Press Start 2P';
     color: #FFFFFF;
@@ -18,6 +17,7 @@ section.notFound {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 5%;
     height: 100vh;
 }
 
