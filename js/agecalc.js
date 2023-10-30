@@ -7,15 +7,13 @@ function calculateAge() {
 
     const ageMilliseconds = currentDate - birthdate;
     const ageYears = ageMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
-
-    output.innerHTML = "Dein aktuelle Alter beträgt " + ageYears.toFixed(10) + " Jahre."
+    if(input.value)
+        output.innerHTML = "Dein aktuelles Alter in Jahren beträgt: " + ageYears.toFixed(10);
 }
 
-// Set max attribute to today's date
 const today = new Date();
 const todayString = today.toISOString().split('T')[0];
 const birthdateInput = document.getElementById("input");
 birthdateInput.max = todayString;
 
-// Update age on input change
-birthdateInput.addEventListener("input", setInterval(calculateAge, 10));
+setInterval(calculateAge, 50);
