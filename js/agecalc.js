@@ -6,11 +6,22 @@ function calculateAge() {
     const currentDate = new Date();
 
     birthdate.setHours(currentDate.getHours());
+    birthdate.setMinutes(currentDate.getMinutes());
+    birthdate.setSeconds(currentDate.getSeconds());
+    birthdate.setMilliseconds(currentDate.getMilliseconds());
 
     const ageMilliseconds = currentDate - birthdate;
     const ageYears = ageMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
-    if(input.value)
-        output.innerHTML = "Dein aktuelles Alter in Jahren beträgt: " + ageYears.toFixed(10);
+
+    if (input.value)
+        output.innerHTML = "Dein aktuelles Alter in Jahren beträgt: " + formatAgeYears(ageYears);
+}
+
+function formatAgeYears(ageYears) {
+    const parts = ageYears.toString().split('.');
+    const yearPart = parts[0];
+    const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
+    return `<span style="font-size: larger;">${yearPart}</span>${decimalPart}`;
 }
 
 const today = new Date();
