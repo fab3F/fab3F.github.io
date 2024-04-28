@@ -6,9 +6,6 @@ function calculateAge() {
     const currentDate = new Date();
 
     birthdate.setHours(currentDate.getHours());
-    birthdate.setMinutes(currentDate.getMinutes());
-    birthdate.setSeconds(currentDate.getSeconds());
-    birthdate.setMilliseconds(currentDate.getMilliseconds());
 
     const ageMilliseconds = currentDate - birthdate;
     const ageYears = ageMilliseconds / (1000 * 60 * 60 * 24 * 365.25);
