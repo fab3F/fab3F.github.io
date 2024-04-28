@@ -18,7 +18,7 @@ function formatAgeYears(ageYears) {
     const parts = ageYears.toString().split('.');
     const yearPart = parts[0];
     const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
-    return `<span style="font-size: larger;">${yearPart}</span>${decimalPart}`;
+    return `<span style="font-size: larger;"><b>${yearPart}</b></span>${decimalPart}`;
 }
 
 const today = new Date();
