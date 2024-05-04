@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
-    <loc>https://fab3f.github.io/online-csv-viewer</loc>
+    <loc>https://fab3f.github.io/online-csv-viewer/</loc>
     <lastmod>2024-04-28T12:00:00+00:00</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fab3f.github.io/online-sqlite-viewer</loc>
+    <loc>https://fab3f.github.io/online-sqlite-viewer/</loc>
     <lastmod>2024-04-28T12:00:00+00:00</lastmod>
     <priority>0.7</priority>
   </url>
@@ -41,11 +41,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fab3f.github.io/link/profikoch</loc>
-    <lastmod>2024-04-28T12:00:00+00:00</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://fab3f.github.io/projects/agecalc</loc>
     <lastmod>2024-04-28T12:00:00+00:00</lastmod>
     <priority>0.7</priority>
@@ -61,12 +56,12 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fab3f.github.io/rickrollprotector</loc>
+    <loc>https://fab3f.github.io/rickrollprotector/</loc>
     <lastmod>2024-04-28T12:00:00+00:00</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://fab3f.github.io/hyperspace-animaton</loc>
+    <loc>https://fab3f.github.io/hyperspace-animaton/</loc>
     <lastmod>2024-04-28T12:00:00+00:00</lastmod>
     <priority>0.7</priority>
   </url>

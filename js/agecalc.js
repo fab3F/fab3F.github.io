@@ -15,7 +15,7 @@ function calculateAge() {
 }
 
 function formatAgeYears(ageYears) {
-    const parts = ageYears.toString().split('.');
+    const parts = ageYears.toFixed(10).toString().split('.');
     const yearPart = parts[0];
     const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
     return `<span style="font-size: larger;"><b>${yearPart}</b></span>${decimalPart}`;

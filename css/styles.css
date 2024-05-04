@@ -8,6 +8,7 @@ p a:hover:not(.footer-emaillink) {
   color: #a46606;
   text-decoration: underline;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .lead a {
@@ -20,6 +21,7 @@ p a:hover:not(.footer-emaillink) {
   color: #a46606;
   text-decoration: underline;
   font-weight: bold;
+  cursor: pointer;
 }
 
 
