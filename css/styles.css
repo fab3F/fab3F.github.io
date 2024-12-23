@@ -110,9 +110,16 @@ input {
   border: 2px solid black;
   border-radius: 8px;
 }
+input::placeholder {
+  font-style: italic;
+}
+input:focus::placeholder {
+  color: transparent;
+}
 
 
-/* Glowing Button */	  
+/* Glowing Button */	 
+ 
 .glow-on-hover {
   margin: 10px;
 	width: 220px;

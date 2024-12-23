@@ -1,3 +1,9 @@
+// Automatically reject all cookies, disable google tag manager and google analytics
+localStorage.setItem('gtm', 'false');
+localStorage.setItem('ga', 'false');
+localStorage.setItem('cookiePopupDisplayed', 'true');
+
+
 // Popup-Fenster anzeigen, wenn der Benutzer die Website zum ersten Mal besucht
 if (localStorage.getItem('cookiePopupDisplayed') !== 'true') {
     document.getElementById('cookie-popup').style.display = 'block';
@@ -36,6 +42,8 @@ document.getElementById('cookie-settings').addEventListener('click', function() 
 
 // Wenn der Benutzer seine Entscheidung ändern möchte, kann er das über einen Link in der Fußzeile tun
 function showCookiePopup() {
+    alert('Alle Cookies wurden deaktiviert');
+    return;
     localStorage.removeItem('gtm');
     localStorage.removeItem('ga');
     localStorage.removeItem('cookiePopupDisplayed');
@@ -88,77 +96,4 @@ function loadGTM_GA(){
             
         }
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function cssPopup(){
-    let div_cookie_popup = document.getElementById('cookie-popup');
-    let div_cookie_popup_content = document.getElementById('cookie-popup-content');
-    let div_cookie_popup_button_container = document.getElementById('cookie-popup-button-container');
-    let button_cookie_popup_button_accept_cookies = document.getElementById('cookie-popup-button-accept-cookies');
-    let button_cookie_popup_button_reject_cookies = document.getElementById('cookie-popup-button-reject-cookies');
-
-    div_cookie_popup.style = "";
-    div_cookie_popup_content.style = "";
-    div_cookie_popup_button_container.style = "";
-    button_cookie_popup_button_accept_cookies.style = "";
-    button_cookie_popup_button_reject_cookies.style = "";
-
-    div_cookie_popup.style.position = "fixed";
-    div_cookie_popup.style.top = "0";
-    div_cookie_popup.style.left = "0";
-    div_cookie_popup.style.right = "0";
-    div_cookie_popup.style.bottom = "0";
-    div_cookie_popup.style.backgroundColor = "rgba(0,0,0,0.5)";
-    div_cookie_popup.style.zIndex = "999";
-    div_cookie_popup.style.display = "none";
-
-    div_cookie_popup_content.style.position = "absolute";
-    div_cookie_popup_content.style.top = "50%";
-    div_cookie_popup_content.style.left = "50%";
-    div_cookie_popup_content.style.transform = "translate(-50%, -50%)";
-    div_cookie_popup_content.style.backgroundColor = "#27282c";
-    div_cookie_popup_content.style.color = "#fff";
-    div_cookie_popup_content.style.padding = "20px";
-    div_cookie_popup_content.style.borderRadius = "10px";
-    div_cookie_popup_content.style.textAlign = "enter";
-    div_cookie_popup_content.style.maxWidth = "500px";
-    div_cookie_popup_content.style.width = "90%";
-
-    div_cookie_popup_button_container.style.marginTop = "20px";
-
-    button_cookie_popup_button_accept_cookies.style.padding = "10px 20px";
-    button_cookie_popup_button_accept_cookies.style.border = "none";
-    button_cookie_popup_button_accept_cookies.style.borderRadius = "5px";
-    button_cookie_popup_button_accept_cookies.style.cursor = "pointer";
-    button_cookie_popup_button_accept_cookies.style.margin = "0 10px";
-    button_cookie_popup_button_accept_cookies.style.backgroundColor = "#007bff";
-    button_cookie_popup_button_accept_cookies.style.color = "#fff";
-    button_cookie_popup_button_accept_cookies.style.transition = ".3s"
-    // missing for button_cookie_popup_button_accept_cookies:hover {transform: scale(1.1);}
-
-    button_cookie_popup_button_reject_cookies.style.padding = "10px 20px";
-    button_cookie_popup_button_reject_cookies.style.border = "none";
-    button_cookie_popup_button_reject_cookies.style.borderRadius = "5px";
-    button_cookie_popup_button_reject_cookies.style.cursor = "pointer";
-    button_cookie_popup_button_reject_cookies.style.margin = "0 10px";
-    button_cookie_popup_button_reject_cookies.style.backgroundColor = "#dc3545";
-    button_cookie_popup_button_reject_cookies.style.color = "#fff";
-    button_cookie_popup_button_reject_cookies.style.transition = ".3s";
-    // missing for button_cookie_popup_button_reject_cookies:hover {transform: scale(1.1);}
 }
