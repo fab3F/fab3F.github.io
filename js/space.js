@@ -1,29 +1,23 @@
-function space() {
+function space(){
     let content = document.getElementById("content");
     let home = document.getElementById("home");
     let footer = document.getElementById("footer");
     let header = document.getElementsByTagName("header")[0];
 
-    if (content && home && footer) {
-        let c = content.getBoundingClientRect().height;
-        let h = home.getBoundingClientRect().height;
-        let f = footer.getBoundingClientRect().height;
-        
+    if(content && home){
+        let c = content.offsetHeight;
+        let h = home.offsetHeight;
+        let f = footer.offsetHeight;
         let bodyH = c + h + f;
-        if (header) {
-            bodyH += header.getBoundingClientRect().height;
+        if(header){
+            bodyH = c + h + f + header.offsetHeight;
         }
-        
         let windowH = window.innerHeight;
-
-        if (windowH > bodyH) {
-            let diff = windowH - bodyH;
-            let style = c + diff - 1; 
-            content.style.minHeight = style + "px";
-        } else {
-            content.style.minHeight = "auto"; 
-        }
+        let diff = windowH - bodyH;
+        let style = c + diff;
+        content.style.minHeight = style + "px";
     }
+    
 }
 
 space();
