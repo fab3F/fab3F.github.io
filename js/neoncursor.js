@@ -4,7 +4,7 @@ if(width < 800){
   r = (r/800) * width;
 }
 
-import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
+import { neonCursor } from './neoncursor-threejs-toys.js';
 
 neonCursor({
   el: document.getElementById('neoncursor'),
